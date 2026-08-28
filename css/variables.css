@@ -1,0 +1,61 @@
+:root {
+    /* Core palette */
+    --bg: #07070f;
+    --surface: #0d0d1a;
+    --surface2: #121226;
+    --surface3: #181830;
+  
+    /* Accent */
+    --accent: #c8a97e;
+    --accent-dim: rgba(200, 169, 126, 0.08);
+    --accent-glow: rgba(200, 169, 126, 0.22);
+    --accent-light: #e0c9a6;
+  
+    /* Secondary accents */
+    --teal: #7ec8c8;
+    --rose: #c87ea9;
+  
+    /* Text */
+    --text: #eae6de;
+    --text-secondary: #b0aca6;
+    --muted: #636375;
+  
+    /* Borders */
+    --border: rgba(200, 169, 126, 0.1);
+    --border-mid: rgba(200, 169, 126, 0.18);
+    --border-hover: rgba(200, 169, 126, 0.32);
+  
+    /* Domain colors */
+    --finance: #c8a97e;
+    --finance-glow: rgba(200, 169, 126, 0.18);
+    --tech: #7ec8c8;
+    --tech-glow: rgba(126, 200, 200, 0.14);
+    --product: #a97ec8;
+    --product-glow: rgba(169, 126, 200, 0.14);
+    --management: #c87e9a;
+    --management-glow: rgba(200, 126, 154, 0.14);
+  
+    /* Typography */
+    --font-display: 'Playfair Display', serif;
+    --font-mono: 'DM Mono', monospace;
+    --font-sans: 'DM Sans', sans-serif;
+  
+    /* Layout */
+    --nav-height: 72px;
+    --max-width: 1200px;
+  
+    /* Easing */
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+  
+    /* Durations */
+    --fast: 180ms;
+    --normal: 340ms;
+    --slow: 600ms;
+  
+    /* Shadows */
+    --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 8px 40px rgba(0, 0, 0, 0.55);
+    --shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.65);
+  }
+  

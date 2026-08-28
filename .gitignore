@@ -1,0 +1,21 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+# Secrets
+.env
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+# Python compilation files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+# Operating system files
+.DS_Store
+Thumbs.db
+# Flask/RAG temporary/data files
+vector_data.pkl
+*.pkl

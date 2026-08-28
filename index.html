@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swastik Ghosh — Portfolio</title>
+  <meta name="description" content="Swastik Ghosh — Manager at HSBC Financial Crime Analytics. Engineer by training, strategist by practice. Building at the intersection of AI, finance, and data-driven decision-making." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/chat.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════ CURSOR ═══════════════════════ -->
+<div class="cursor"      id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- ═══════════════════════ NAV ═══════════════════════════ -->
+<nav class="nav" id="main-nav">
+  <div class="nav-logo" onclick="showPage('home')" id="nav-logo">SG</div>
+  <ul class="nav-links">
+    <li><a href="#" id="nav-home"       onclick="showPage('home'); return false;" class="active">Home</a></li>
+    <li><a href="#" id="nav-experience" onclick="showPage('experience-detail'); return false;">Experience</a></li>
+    <li><a href="#" id="nav-skills"     onclick="showPage('skills-overview'); return false;">Skill Alignment</a></li>
+    <li><a href="https://drive.google.com/file/d/1SRjVRVYyLxjWtMa4t_4dToJIS3QD7ZHe/view?usp=drive_link" target="_blank" id="nav-resume">Resume</a></li>
+    <li><a href="#" id="nav-contact"    onclick="scrollToSection('contact'); return false;">Contact</a></li>
+  </ul>
+</nav>
+
+
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║                   HOME PAGE                         ║
+     ╚══════════════════════════════════════════════════════╝ -->
+<div id="home" class="page active">
+
+  <!-- Background layers -->
+  <div class="home-bg"></div>
+  <div class="grid-lines"></div>
+  <canvas id="canvas-particles"></canvas>
+
+  <!-- ── Hero ── -->
+  <div class="hero-wrapper" id="hero-wrapper">
+    <section class="hero">
+      <div class="hero-content">
+
+        <!-- Left -->
+        <div class="hero-left">
+          <div class="hero-tag hero-anim-1">
+            <span class="tag-dot"></span>
+            Available for opportunities
+          </div>
+
+          <h1 class="hero-name hero-anim-2">
+            Swastik<br>
+            <em>Ghosh</em>
+          </h1>
+
+          <p class="hero-desc hero-anim-3">
+            Manager at HSBC Financial Crime Analytics.<br>
+            Engineer by training, quantitative strategist by practice —<br>
+            building at the intersection of Mathematical Finance, Multi-Agent AI, and Algorithmic Intelligence.
+          </p>
+
+          <div class="hero-actions hero-anim-4">
+            <button type="button" class="btn btn-primary" onclick="showPage('skills-overview')" id="btn-explore-skills">Explore Skills</button>
+            <a href="https://drive.google.com/file/d/1SRjVRVYyLxjWtMa4t_4dToJIS3QD7ZHe/view?usp=drive_link" target="_blank" class="btn btn-outline" id="btn-view-resume">View Resume</a>
+            <button type="button" class="btn btn-outline btn-chat-trigger" style="border-color: var(--tech); color: var(--tech);" onclick="toggleChat()" id="btn-chat-resume">Ask AI (ResumeLLM)</button>
+          </div>
+        </div>
+
+        <!-- Right — Achievement Flashcards -->
+        <div class="hero-right hero-anim-right">
+          <div class="flashcard-container" id="flashcard-container">
+            <div class="flashcard-track" id="flashcard-track">
+
+              <!-- Technical Achievements -->
+              <div class="flash-card tech-card" data-index="0">
+                <div class="flash-badge tech-badge">⚙️ Technical</div>
+                <div class="flash-stat">97.5%</div>
+                <div class="flash-title">Leakage Detection Accuracy</div>
+                <div class="flash-desc">SVM, XGBoost &amp; Linear Regression on multi-sensor industrial data at Hitachi</div>
+                <div class="flash-org">Hitachi · 2023</div>
+              </div>
+
+              <div class="flash-card tech-card" data-index="1">
+                <div class="flash-badge tech-badge">🤖 Technical</div>
+                <div class="flash-stat">60%</div>
+                <div class="flash-title">Automation Gain via LLMs</div>
+                <div class="flash-desc">End-to-end LLM pipeline: code parsing, embedding graphs, RAG SQL &amp; vector DB at EY</div>
+                <div class="flash-org">Ernst &amp; Young · 2024</div>
+              </div>
+
+              <div class="flash-card tech-card" data-index="2">
+                <div class="flash-badge tech-badge">🛡️ Technical</div>
+                <div class="flash-stat">40%</div>
+                <div class="flash-title">Better Threat Detection</div>
+                <div class="flash-desc">LLM-powered vulnerability scanner using transformer NLP at EY</div>
+                <div class="flash-org">Ernst &amp; Young · 2025</div>
+              </div>
+
+              <div class="flash-card tech-card" data-index="3">
+                <div class="flash-badge tech-badge">🔬 Technical</div>
+                <div class="flash-stat">45%</div>
+                <div class="flash-title">AI Accuracy Boost</div>
+                <div class="flash-desc">Responsible AI models for toxicity/bias detection — significant NLP safety benchmark improvements</div>
+                <div class="flash-org">Ernst &amp; Young · 2025</div>
+              </div>
+
+              <div class="flash-card tech-card" data-index="4">
+                <div class="flash-badge tech-badge">💉 Technical</div>
+                <div class="flash-stat">50%</div>
+                <div class="flash-title">Faster Security Scans</div>
+                <div class="flash-desc">SQL injection testing automation slashed scan time &amp; reduced manual effort 60%</div>
+                <div class="flash-org">Ernst &amp; Young · 2025</div>
+              </div>
+
+              <!-- Non-Technical Achievements -->
+              <div class="flash-card nontch-card" data-index="5">
+                <div class="flash-badge nontch-badge">🏆 Leadership</div>
+                <div class="flash-stat">Manager</div>
+                <div class="flash-title">Global Financial Crime Lead</div>
+                <div class="flash-desc">Overseeing case prioritisation &amp; allocation across Singapore, UK, and Turkey markets</div>
+                <div class="flash-org">HSBC · 2026</div>
+              </div>
+
+              <div class="flash-card nontch-card" data-index="6">
+                <div class="flash-badge nontch-badge">📚 Publication</div>
+                <div class="flash-stat">IJFMR</div>
+                <div class="flash-title">Published Research · Fraud Detection</div>
+                <div class="flash-desc">Multi-Model Financial Fraud Detection with Explainable AI — ensemble ML for compliance teams</div>
+                <div class="flash-org">IJFMR · 2025</div>
+              </div>
+
+              <div class="flash-card nontch-card" data-index="7">
+                <div class="flash-badge nontch-badge">📖 Publication</div>
+                <div class="flash-stat">IJSREM</div>
+                <div class="flash-title">Published Research · Blockchain ML</div>
+                <div class="flash-desc">ML-Based Spectrum Sensing &amp; Management using Blockchain for distributed networks</div>
+                <div class="flash-org">IJSREM · 2023</div>
+              </div>
+
+              <div class="flash-card nontch-card" data-index="8">
+                <div class="flash-badge nontch-badge">🎓 Mentorship</div>
+                <div class="flash-stat">Volunteer</div>
+                <div class="flash-title">Teaching &amp; Peer Mentorship</div>
+                <div class="flash-desc">Led volunteer teaching in data science fundamentals, supporting junior peers on real projects</div>
+                <div class="flash-org">Community · Ongoing</div>
+              </div>
+
+              <div class="flash-card nontch-card" data-index="9">
+                <div class="flash-badge nontch-badge">📜 Certification</div>
+                <div class="flash-stat">LBS</div>
+                <div class="flash-title">Financial Analysis · London Business School</div>
+                <div class="flash-desc">Financial modelling, valuation frameworks, and quantitative analysis methodologies via Coursera</div>
+                <div class="flash-org">London Business School · Coursera</div>
+              </div>
+
+            </div>
+
+            <!-- Controls -->
+            <div class="flashcard-controls">
+              <button type="button" class="fc-btn fc-prev" id="fc-prev" onclick="flashPrev()" aria-label="Previous card">‹</button>
+              <div class="fc-dots" id="fc-dots"></div>
+              <button type="button" class="fc-btn fc-next" id="fc-next" onclick="flashNext()" aria-label="Next card">›</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ── Stats Strip ── -->
+  <div class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <span class="stat-num" data-val="3+">3+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-val="4">4</span>
+        <span class="stat-label">Companies</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-val="2">2</span>
+        <span class="stat-label">Publications</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-val="60%">60%</span>
+        <span class="stat-label">Avg. Efficiency Gain</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Experience (Company Cards Only) ── -->
+  <div id="experience">
+    <div class="section">
+      <div class="section-label reveal">Career</div>
+      <h2 class="section-title reveal d1">Work Experience</h2>
+      <p class="section-subtitle reveal d2">Click on a company to explore the full details →</p>
+
+      <div class="exp-company-grid">
+
+        <div class="exp-company-card reveal d1" onclick="showPage('experience-detail')" id="exp-hsbc">
+          <div class="exp-co-accent" style="background: var(--finance);"></div>
+          <div class="exp-co-icon">🏦</div>
+          <div class="exp-co-name">HSBC</div>
+          <div class="exp-co-role">Manager</div>
+          <div class="exp-co-period">Feb 2026 — Present</div>
+          <div class="exp-co-arrow">↗</div>
+        </div>
+
+        <div class="exp-company-card reveal d2" onclick="showPage('experience-detail')" id="exp-ey">
+          <div class="exp-co-accent" style="background: var(--tech);"></div>
+          <div class="exp-co-icon">📊</div>
+          <div class="exp-co-name">Ernst &amp; Young</div>
+          <div class="exp-co-role">Consultant → Assoc. Consultant</div>
+          <div class="exp-co-period">Aug 2024 — Feb 2026</div>
+          <div class="exp-co-arrow">↗</div>
+        </div>
+
+        <div class="exp-company-card reveal d3" onclick="showPage('experience-detail')" id="exp-hitachi">
+          <div class="exp-co-accent" style="background: var(--product);"></div>
+          <div class="exp-co-icon">⚡</div>
+          <div class="exp-co-name">Hitachi</div>
+          <div class="exp-co-role">Research Intern · Data Science</div>
+          <div class="exp-co-period">Aug 2023 — Nov 2023</div>
+          <div class="exp-co-arrow">↗</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Technical Skills ── -->
+  <div class="section" style="padding-top: 0;">
+    <div class="section-label reveal">Stack &amp; Expertise</div>
+    <h2 class="section-title reveal d1">Technical &amp; Quant Skills</h2>
+    
+    <div class="skills-container reveal d2">
+      
+      <!-- Programming & Tools -->
+      <div class="skill-category-block">
+        <div class="skill-category-title">Programming &amp; Tools</div>
+        <div class="skills-pills-wrap">
+          <div class="skill-pill">Python</div>
+          <div class="skill-pill">R</div>
+          <div class="skill-pill">C++</div>
+          <div class="skill-pill">SQL</div>
+          <div class="skill-pill">MATLAB</div>
+          <div class="skill-pill">Git</div>
+          <div class="skill-pill">PySpark</div>
+          <div class="skill-pill">Flask</div>
+          <div class="skill-pill">VS Code</div>
+          <div class="skill-pill">Postman</div>
+        </div>
+      </div>
+
+      <!-- Quantitative Finance -->
+      <div class="skill-category-block">
+        <div class="skill-category-title">Quantitative Finance</div>
+        <div class="skills-pills-wrap">
+          <div class="skill-pill">Probability</div>
+          <div class="skill-pill">Statistics</div>
+          <div class="skill-pill">Time Series Analysis</div>
+          <div class="skill-pill">Stochastic Processes</div>
+          <div class="skill-pill">Optimization</div>
+          <div class="skill-pill">Numerical Methods</div>
+          <div class="skill-pill">Monte Carlo Simulation</div>
+        </div>
+      </div>
+
+      <!-- Financial Skills -->
+      <div class="skill-category-block">
+        <div class="skill-category-title">Financial Skills</div>
+        <div class="skills-pills-wrap">
+          <div class="skill-pill">Financial Modelling &amp; Valuation</div>
+          <div class="skill-pill">Financial Analysis</div>
+          <div class="skill-pill">Derivatives Pricing</div>
+          <div class="skill-pill">Black-Scholes</div>
+          <div class="skill-pill">Options</div>
+          <div class="skill-pill">Market Microstructure</div>
+          <div class="skill-pill">Algorithmic Trading</div>
+          <div class="skill-pill">Market Impact</div>
+          <div class="skill-pill">Risk Management</div>
+          <div class="skill-pill">Portfolio Analysis</div>
+        </div>
+      </div>
+
+      <!-- ML & AI Expertise -->
+      <div class="skill-category-block">
+        <div class="skill-category-title">ML &amp; AI Expertise</div>
+        <div class="skills-pills-wrap">
+          <div class="skill-pill">Machine Learning</div>
+          <div class="skill-pill">Deep Learning</div>
+          <div class="skill-pill">NLP</div>
+          <div class="skill-pill">LLMs</div>
+          <div class="skill-pill">Generative AI</div>
+        </div>
+      </div>
+
+      <!-- Databases & Visualization -->
+      <div class="skill-category-block">
+        <div class="skill-category-title">Databases &amp; Visualization</div>
+        <div class="skills-pills-wrap">
+          <div class="skill-pill">MongoDB</div>
+          <div class="skill-pill">MySQL</div>
+          <div class="skill-pill">Tableau</div>
+          <div class="skill-pill">Power BI</div>
+        </div>
+      </div>
+
+      <!-- Platforms -->
+      <div class="skill-category-block">
+        <div class="skill-category-title">Platforms</div>
+        <div class="skills-pills-wrap">
+          <div class="skill-pill">AWS</div>
+          <div class="skill-pill">Figma</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Projects ── -->
+  <div class="section" style="padding-top: 0;">
+    <div class="section-label reveal">Built</div>
+    <h2 class="section-title reveal d1">Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card reveal d1" id="proj-finance-agent">
+        <div class="proj-number">01</div>
+        <div class="proj-title">Finance AI Agent</div>
+        <div class="proj-tech">Python · HTML/CSS · Flask · Finhub API</div>
+        <div class="proj-desc">AI assistant delivering real-time stock updates, financial insights, and market history with personalised recommendations. Implements trend analysis and stock suggestion logic.</div>
+        <a href="https://finance-new-project-6.onrender.com" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: fit-content; padding: 0.5rem 1rem; font-size: 0.9rem;">View Project</a>
+      </div>
+      <div class="project-card reveal d2" id="proj-sentiment">
+        <div class="proj-number">02</div>
+        <div class="proj-title">Sentiment Analysis Chrome Extension</div>
+        <div class="proj-tech">Python · JavaScript · HTML/CSS · Flask</div>
+        <div class="proj-desc">Identifies sentiment keywords, computes text polarity, and visualises results through charts and word clouds. Packaged as a Chrome extension for real-time text analysis.</div>
+        <a href="https://sentiment-project-2-xder.onrender.com/" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: fit-content; padding: 0.5rem 1rem; font-size: 0.9rem;">View Project</a>
+      </div>
+      <div class="project-card reveal d3" id="proj-monte-carlo">
+        <div class="proj-number">03</div>
+        <div class="proj-title">Monte Carlo Wealth Simulator</div>
+        <div class="proj-tech">Finance · Simulation · Python</div>
+        <div class="proj-desc">Simulates wealth trajectories using Monte Carlo methods to model various market conditions and investment strategies over time.</div>
+        <a href="https://monte-carlo-wealth-simulator-3.onrender.com" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: fit-content; padding: 0.5rem 1rem; font-size: 0.9rem;">View Project</a>
+      </div>
+      <div class="project-card reveal d4" id="proj-market-impact">
+        <div class="proj-number">04</div>
+        <div class="proj-title">Market Impact &amp; Execution Cost Simulator</div>
+        <div class="proj-tech">Finance · Trading · Python</div>
+        <div class="proj-desc">Models the market impact and execution costs for large algorithmic trades, simulating slippage and liquidity consumption.</div>
+        <a href="https://marketimpact-execution-cost-simulator-1.onrender.com" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: fit-content; padding: 0.5rem 1rem; font-size: 0.9rem;">View Project</a>
+      </div>
+      <div class="project-card reveal d5" id="proj-order-book">
+        <div class="proj-number">05</div>
+        <div class="proj-title">Order Book Liquidity Engine</div>
+        <div class="proj-tech">Finance · Market Microstructure · Python</div>
+        <div class="proj-desc">Simulation engine for order book liquidity, matching bids and asks dynamically to evaluate market microstructure scenarios.</div>
+        <a href="https://order-book-liquidity-simulation-engine.onrender.com" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: fit-content; padding: 0.5rem 1rem; font-size: 0.9rem;">View Project</a>
+      </div>
+      <div class="project-card reveal d6" id="proj-algo-trading">
+        <div class="proj-number">06</div>
+        <div class="proj-title">Algorithmic Trading Battle Simulator</div>
+        <div class="proj-tech">Finance · Algorithmic Trading · Python</div>
+        <div class="proj-desc">Platform to backtest and pit different algorithmic trading strategies against each other in historical market environments.</div>
+        <a href="https://algorithmic-trading-battle-simulator.onrender.com" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: fit-content; padding: 0.5rem 1rem; font-size: 0.9rem;">View Project</a>
+      </div>
+      <div class="project-card reveal d7" id="proj-black-scholes">
+        <div class="proj-number">07</div>
+        <div class="proj-title">Black-Scholes Visual Explainer</div>
+        <div class="proj-tech">Finance · Derivatives · Data Viz</div>
+        <div class="proj-desc">Interactive visual explainer for the Black-Scholes options pricing model, breaking down Greeks and volatility impact dynamically.</div>
+        <a href="https://blackscholesvisualexplainer-1.onrender.com" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: fit-content; padding: 0.5rem 1rem; font-size: 0.9rem;">View Project</a>
+      </div>
+      <div class="project-card reveal d8" id="proj-volatility-surface">
+        <div class="proj-number">08</div>
+        <div class="proj-title">Volatility Surface Builder</div>
+        <div class="proj-tech">Finance · Quantitative Analysis · Python</div>
+        <div class="proj-desc">Constructs and visualises implied volatility surfaces for options chains across various strikes and maturities.</div>
+        <a href="https://volatility-surface-builder-3.onrender.com" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: fit-content; padding: 0.5rem 1rem; font-size: 0.9rem;">View Project</a>
+      </div>
+      <div class="project-card reveal d9" id="proj-systemic-risk">
+        <div class="proj-number">09</div>
+        <div class="proj-title">Systemic Risk Contagion Engine</div>
+        <div class="proj-tech">Finance · Risk Management · Network Theory</div>
+        <div class="proj-desc">Models systemic risk and financial contagion across interconnected banking networks to assess cascading defaults.</div>
+        <a href="https://systemic-risk-contagion-network-engine.onrender.com" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: fit-content; padding: 0.5rem 1rem; font-size: 0.9rem;">View Project</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Publications ── -->
+  <div class="section" style="padding-top: 0;">
+    <div class="section-label reveal">Research</div>
+    <h2 class="section-title reveal d1">Publications</h2>
+    <div class="pub-list">
+      <div class="pub-card reveal d1">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title">Multi-Model Financial Fraud Detection with Explainable AI</div>
+          <div class="pub-journal">IJFMR — International Journal For Multidisciplinary Research</div>
+          <div class="pub-desc">Ensemble approach to financial fraud detection incorporating Explainable AI (XAI) to make model decisions interpretable for compliance and audit teams. Covers feature importance, SHAP analysis, and model benchmarking.</div>
+        </div>
+      </div>
+      <div class="pub-card reveal d2">
+        <div class="pub-year">2023</div>
+        <div>
+          <div class="pub-title">ML-Based Spectrum Sensing and Management Using Blockchain</div>
+          <div class="pub-journal">IJSREM — International Journal of Scientific Research in Engineering and Management</div>
+          <div class="pub-desc">Machine learning applied to dynamic spectrum sensing in cognitive radio networks, combined with blockchain for secure, tamper-proof spectrum allocation and management across distributed nodes.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Contact ── -->
+  <div id="contact">
+    <div class="contact-strip">
+      <div class="contact-inner">
+        <div class="contact-left reveal-left">
+          <h3>Let's Connect</h3>
+          <p>Open to roles in Quantitative Finance, Financial AI, Quant Development, and Risk Analytics. Always happy to talk.</p>
+        </div>
+        <div class="contact-links reveal d2">
+          <a class="contact-link" href="mailto:swastikghosh1106@gmail.com" id="link-email">
+            <span class="contact-icon">✉</span>
+            swastikghosh1106@gmail.com
+          </a>
+          <a class="contact-link" href="https://linkedin.com/in/swastik-ghosh" target="_blank" rel="noopener" id="link-linkedin">
+            <span class="contact-icon">🔗</span>
+            linkedin.com/in/swastik-ghosh
+          </a>
+          <a class="contact-link" href="https://github.com/sg1106" target="_blank" rel="noopener" id="link-github">
+            <span class="contact-icon">⌥</span>
+            github.com/sg1106
+          </a>
+          <a class="contact-link" href="tel:+919131230644" id="link-phone">
+            <span class="contact-icon">📞</span>
+            +91 91312 30644
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Swastik Ghosh &nbsp;·&nbsp; Bangalore, India &nbsp;·&nbsp; Crafted with precision
+  </footer>
+</div>
+
+
+<div id="skills-overview" class="page">
+
+  <div class="skills-hero">
+    <div class="section-label">Skill Alignment</div>
+    <h2>Quant &amp; Financial AI</h2>
+    <p>A practitioner operating across Quantitative Finance and Financial AI Engineering — combining mathematical modeling with production-grade AI systems.</p>
+  </div>
+
+  <div class="skill-domains">
+
+    <div class="domain-card" style="--domain-color: var(--finance)"
+         onclick="showPage('detail-finance')" id="domain-finance">
+      <div class="domain-shimmer"></div>
+      <div class="domain-left">
+        <div class="domain-number">01</div>
+        <div class="domain-icon-large">📈</div>
+        <div class="domain-title">Quantitative Finance</div>
+      </div>
+      <div class="domain-middle">
+        <div class="domain-summary">From quantitative financial crime detection at HSBC to probabilistic risk modeling at EY, I apply mathematical finance, Monte Carlo simulations, and derivatives pricing frameworks to high-consequence financial environments.</div>
+      </div>
+      <div class="domain-right">
+        <div class="domain-tags">
+          <span class="domain-tag">Quantitative Risk</span>
+          <span class="domain-tag">Monte Carlo</span>
+          <span class="domain-tag">Derivatives</span>
+          <span class="domain-tag">Volatility Surface</span>
+          <span class="domain-tag">AML</span>
+          <span class="domain-tag">Market Microstructure</span>
+        </div>
+        <div class="domain-cta">Explore Alignment →</div>
+      </div>
+    </div>
+
+    <div class="domain-card" style="--domain-color: var(--tech)"
+         onclick="showPage('detail-tech')" id="domain-tech">
+      <div class="domain-shimmer"></div>
+      <div class="domain-left">
+        <div class="domain-number">02</div>
+        <div class="domain-icon-large">⚙️</div>
+        <div class="domain-title">Financial AI &amp; Engineering</div>
+      </div>
+      <div class="domain-middle">
+        <div class="domain-summary">Deep engineering experience in Multi-Agentic GenAI, Text-to-SQL for financial databases, RAG compliance systems, PyTorch, and automated web-scraping intelligence for global markets.</div>
+      </div>
+      <div class="domain-right">
+        <div class="domain-tags">
+          <span class="domain-tag">Multi-Agent GenAI</span>
+          <span class="domain-tag">Text-to-SQL</span>
+          <span class="domain-tag">Financial RAG</span>
+          <span class="domain-tag">PyTorch / TF</span>
+          <span class="domain-tag">Web Intelligence</span>
+          <span class="domain-tag">Algorithmic Engines</span>
+        </div>
+        <div class="domain-cta">Explore Alignment →</div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 Swastik Ghosh &nbsp;·&nbsp;
+    <span class="footer-link" onclick="showPage('home')">Back to Home</span>
+  </footer>
+</div>
+
+
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║              FINANCE DETAIL PAGE                    ║
+     ╚══════════════════════════════════════════════════════╝ -->
+<div id="detail-finance" class="page detail-page">
+
+  <div class="detail-hero" style="background: radial-gradient(ellipse 65% 80% at 80% 50%, rgba(200,169,126,0.09), transparent 60%);">
+    <div class="detail-hero-inner">
+      <button type="button" class="back-btn" onclick="showPage('skills-overview')" id="back-finance">← Back to Skills</button>
+      <div class="detail-domain-label" style="color: var(--finance);">⬡ Skill Alignment · Finance</div>
+      <h1 class="detail-title" style="color: var(--finance);">Finance</h1>
+      <p class="detail-subtitle">From detecting financial crime at a global bank to building probabilistic risk quantification models — my work lives at the intersection of data, money, and consequence.</p>
+    </div>
+  </div>
+
+  <div class="detail-body">
+
+    <div class="evidence-grid">
+
+      <div class="evidence-card reveal d1" style="--ev-color: var(--finance)">
+        <div class="ev-category">Current Role</div>
+        <div class="ev-title">Financial Crime Detection · HSBC</div>
+        <div class="ev-desc">Leading automated web-scraping systems to identify financial crime for individuals across Singapore, UK, and Turkey. Designing trigger generation for suspicious transaction detection.</div>
+        <div class="ev-metrics">
+          <div class="ev-metric">
+            <span class="ev-metric-val">3</span>
+            <span class="ev-metric-label">Markets</span>
+          </div>
+          <div class="ev-metric">
+            <span class="ev-metric-val">AML</span>
+            <span class="ev-metric-label">Domain</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="evidence-card reveal d2" style="--ev-color: var(--finance)">
+        <div class="ev-category">EY Consulting</div>
+        <div class="ev-title">CyberRisk Quantification System</div>
+        <div class="ev-desc">Built a quantitative risk system using probabilistic models, Monte Carlo simulations, and SQL-based threat intelligence to generate risk-adjusted financial mitigations.</div>
+        <div class="ev-metrics">
+          <div class="ev-metric">
+            <span class="ev-metric-val">45%</span>
+            <span class="ev-metric-label">Efficiency Gain</span>
+          </div>
+          <div class="ev-metric">
+            <span class="ev-metric-val">Monte Carlo</span>
+            <span class="ev-metric-label">Method</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="evidence-card reveal d3" style="--ev-color: var(--finance)">
+        <div class="ev-category">Project</div>
+        <div class="ev-title">Finance AI Agent</div>
+        <div class="ev-desc">Personal AI assistant for real-time stock updates, financial insights, market history, and personalised investment recommendations using the Finhub API and trend analysis logic.</div>
+      </div>
+
+      <div class="evidence-card reveal d4" style="--ev-color: var(--finance)">
+        <div class="ev-category">Publication</div>
+        <div class="ev-title">Multi-Model Financial Fraud Detection with XAI</div>
+        <div class="ev-desc">Published research on ensemble approaches to financial fraud detection, incorporating Explainable AI to make model decisions interpretable for compliance and audit teams.</div>
+      </div>
+
+      <div class="evidence-card reveal d5" style="--ev-color: var(--finance)">
+        <div class="ev-category">Certification</div>
+        <div class="ev-title">Fundamentals of Financial Analysis</div>
+        <div class="ev-desc">London Business School via Coursera — covering financial modelling, valuation frameworks, and quantitative analysis methodologies.</div>
+      </div>
+
+      <div class="evidence-card reveal d6" style="--ev-color: var(--finance)">
+        <div class="ev-category">Certification</div>
+        <div class="ev-title">SEBI Investor Awareness Test</div>
+        <div class="ev-desc">Passed the SEBI/NISM Investor Awareness certification — demonstrating foundational knowledge of Indian securities markets, regulations, and investment principles.</div>
+      </div>
+
+    </div>
+
+    <h3 class="detail-section-title reveal">Finance Journey</h3>
+    <div class="journey-timeline" style="--jt-color: var(--finance)">
+
+      <div class="journey-item reveal d1">
+        <div class="journey-year">2023</div>
+        <div class="journey-title">Predictive Maintenance Modelling · Hitachi</div>
+        <div class="journey-desc">Applied ML to industrial sensor data — an early application of quantitative modelling with real-world consequences: accuracy, downtime reduction, and cost impact.</div>
+      </div>
+
+      <div class="journey-item reveal d2">
+        <div class="journey-year">2024–2025</div>
+        <div class="journey-title">CyberRisk Quantification · EY</div>
+        <div class="journey-desc">Built probabilistic financial risk models with Monte Carlo simulations. First direct application of financial modelling in a professional consulting context.</div>
+      </div>
+
+      <div class="journey-item reveal d3">
+        <div class="journey-year">2025</div>
+        <div class="journey-title">Fraud Detection Publication · IJFMR</div>
+        <div class="journey-desc">Published research on financial fraud detection using multi-model ML and Explainable AI. Connected research to real financial compliance needs.</div>
+      </div>
+
+      <div class="journey-item reveal d4">
+        <div class="journey-year">2026 →</div>
+        <div class="journey-title">Manager, Financial Crime · HSBC</div>
+        <div class="journey-desc">Now operating at the managerial level within a Tier-1 global bank, directly combating financial crime across multiple international markets.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Swastik Ghosh &nbsp;·&nbsp;
+    <span class="footer-link" onclick="showPage('skills-overview')" style="color: var(--finance);">Back to Skill Alignment</span>
+  </footer>
+</div>
+
+
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║              TECHNOLOGY DETAIL PAGE                  ║
+     ╚══════════════════════════════════════════════════════╝ -->
+<div id="detail-tech" class="page detail-page">
+
+  <div class="detail-hero" style="background: radial-gradient(ellipse 65% 80% at 80% 50%, rgba(126,200,200,0.08), transparent 60%);">
+    <div class="detail-hero-inner">
+      <button type="button" class="back-btn" onclick="showPage('skills-overview')" id="back-tech">← Back to Skills</button>
+      <div class="detail-domain-label" style="color: var(--tech);">⬡ Skill Alignment · Technology</div>
+      <h1 class="detail-title" style="color: var(--tech);">Technology</h1>
+      <p class="detail-subtitle">I build production-grade ML and AI systems with measurable outcomes. My engineering spans from transformer-based NLP to end-to-end LLM pipelines — always in service of real business problems.</p>
+    </div>
+  </div>
+
+  <div class="detail-body">
+
+    <div class="evidence-grid">
+
+      <div class="evidence-card reveal d1" style="--ev-color: var(--tech)">
+        <div class="ev-category">EY · LLM Engineering</div>
+        <div class="ev-title">LLM Feature Suite in Python</div>
+        <div class="ev-desc">Developed full LLM pipeline: code parsing, embedding-based graph generation, automated PDF/Excel output, and RAG SQL/vector DB integration using PyTorch and TensorFlow.</div>
+        <div class="ev-metrics">
+          <div class="ev-metric">
+            <span class="ev-metric-val">60%</span>
+            <span class="ev-metric-label">Automation Gain</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="evidence-card reveal d2" style="--ev-color: var(--tech)">
+        <div class="ev-category">EY · Security AI</div>
+        <div class="ev-title">LLM-Powered Vulnerability Scanner</div>
+        <div class="ev-desc">Built transformer-based NLP system with conversational interface for real-time vulnerability detection. Improved threat detection by 40% over baseline methods.</div>
+        <div class="ev-metrics">
+          <div class="ev-metric">
+            <span class="ev-metric-val">40%</span>
+            <span class="ev-metric-label">Better Detection</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="evidence-card reveal d3" style="--ev-color: var(--tech)">
+        <div class="ev-category">EY · Responsible AI</div>
+        <div class="ev-title">Bias &amp; Toxicity Classification Models</div>
+        <div class="ev-desc">Built and evaluated Responsible AI models to detect and classify toxicity, bias, and unsafe language — 45% accuracy boost and significantly improved NLP safety benchmarks.</div>
+        <div class="ev-metrics">
+          <div class="ev-metric">
+            <span class="ev-metric-val">45%</span>
+            <span class="ev-metric-label">Accuracy Gain</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="evidence-card reveal d4" style="--ev-color: var(--tech)">
+        <div class="ev-category">EY · Security Automation</div>
+        <div class="ev-title">SQL Injection Testing Automation</div>
+        <div class="ev-desc">Combined web crawling, ML, and GenAI payload generation to automate SQL injection testing for DVWA. Slashed manual effort by 60% and scan time by 50%.</div>
+        <div class="ev-metrics">
+          <div class="ev-metric">
+            <span class="ev-metric-val">60%</span>
+            <span class="ev-metric-label">Effort Reduction</span>
+          </div>
+          <div class="ev-metric">
+            <span class="ev-metric-val">50%</span>
+            <span class="ev-metric-label">Faster Scans</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="evidence-card reveal d5" style="--ev-color: var(--tech)">
+        <div class="ev-category">Hitachi · ML Research</div>
+        <div class="ev-title">Leakage Detection with Sensor Data</div>
+        <div class="ev-desc">SVM, XGBoost, and Linear Regression models integrating pressure/flow/temperature sensors with system topology. Achieved 97.5% detection accuracy.</div>
+        <div class="ev-metrics">
+          <div class="ev-metric">
+            <span class="ev-metric-val">97.5%</span>
+            <span class="ev-metric-label">Accuracy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="evidence-card reveal d6" style="--ev-color: var(--tech)">
+        <div class="ev-category">Publication</div>
+        <div class="ev-title">Spectrum Sensing via ML + Blockchain</div>
+        <div class="ev-desc">Published in IJSREM — ML-based spectrum sensing and management using blockchain, demonstrating early research capability across wireless systems and distributed ledger technology.</div>
+      </div>
+
+    </div>
+
+    <h3 class="detail-section-title reveal">Technology Journey</h3>
+    <div class="journey-timeline" style="--jt-color: var(--tech)">
+
+      <div class="journey-item reveal d1">
+        <div class="journey-year">2023</div>
+        <div class="journey-title">First ML Models · Hitachi Research Internship</div>
+        <div class="journey-desc">Built SVM, XGBoost, and regression models on industrial sensor data — first exposure to production ML with real accuracy constraints (97.5%). Learned to work with noisy, multi-modal data.</div>
+      </div>
+
+      <div class="journey-item reveal d2">
+        <div class="journey-year">2023</div>
+        <div class="journey-title">Research Publication · IJSREM</div>
+        <div class="journey-desc">Published ML-based spectrum sensing using blockchain. Demonstrated ability to apply ML to novel, cross-domain problems early in the career.</div>
+      </div>
+
+      <div class="journey-item reveal d3">
+        <div class="journey-year">2024</div>
+        <div class="journey-title">LLM Engineering at Scale · EY</div>
+        <div class="journey-desc">Built end-to-end LLM pipelines with PyTorch/TensorFlow including code parsers, embedding-based graph generation, RAG integrations, and automated document output — 60% automation gain.</div>
+      </div>
+
+      <div class="journey-item reveal d4">
+        <div class="journey-year">2025</div>
+        <div class="journey-title">Security AI &amp; Responsible AI · EY</div>
+        <div class="journey-desc">Shipped transformer-based vulnerability scanners (40% better detection) and Responsible AI classifiers for bias/toxicity (45% accuracy gain). Also automated SQL injection testing — cutting scan time 50%.</div>
+      </div>
+
+      <div class="journey-item reveal d5">
+        <div class="journey-year">2026 →</div>
+        <div class="journey-title">AI-Powered Financial Crime Detection · HSBC</div>
+        <div class="journey-desc">Applying ML and web-scraping at global banking scale — building systems that identify financial crime across international markets using name-based intelligence and pattern recognition.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Swastik Ghosh &nbsp;·&nbsp;
+    <span class="footer-link" onclick="showPage('skills-overview')" style="color: var(--tech);">Back to Skill Alignment</span>
+  </footer>
+</div>
+
+
+
+
+
+<!-- ╔══════════════════════════════════════════════════════╗
+     ║              EXPERIENCE DETAIL PAGE                ║
+     ╚══════════════════════════════════════════════════════╝ -->
+<div id="experience-detail" class="page">
+
+  <div class="exp-detail-hero">
+    <div class="exp-detail-hero-inner">
+      <button type="button" class="back-btn" onclick="showPage('home')" id="back-experience">← Back to Home</button>
+      <div class="section-label">Career Journey</div>
+      <h1 class="exp-detail-heading">Work Experience</h1>
+      <p class="exp-detail-subtext">3+ years across global banking, top-tier consulting, and applied research — building real systems with measurable impact.</p>
+    </div>
+  </div>
+
+  <div class="exp-detail-body">
+
+    <!-- HSBC -->
+    <div class="exp-block reveal d1" id="exp-block-hsbc">
+      <div class="exp-block-header" style="--eb-color: var(--finance);">
+        <div class="exp-block-top">
+          <div class="exp-block-icon">🏦</div>
+          <div>
+            <div class="exp-block-company" style="color: var(--finance);">HSBC · Financial Crime &amp; Future Analytics</div>
+            <div class="exp-block-role">Manager</div>
+            <div class="exp-block-period">Feb 2026 — Present · Bangalore, India</div>
+          </div>
+        </div>
+        <div class="exp-block-badge" style="border-color: var(--finance); color: var(--finance);">Current</div>
+      </div>
+      <div class="exp-block-content">
+        <div class="exp-item-grid">
+          <div class="exp-item-card" style="--ei-color: var(--finance);">
+            <div class="exp-item-icon">🤖</div>
+            <div class="exp-item-title">Multi-Agentic GenAI EWRA Analytics</div>
+            <div class="exp-item-desc">Built a multi-agentic GenAI system for EWRA financial-crime analytics, directly connecting to a multi-table database and using GenAI models as tools for schema-aware database understanding, user-query intent classification, and Text-to-SQL generation, followed by automated query execution, data retrieval, visualization, and client-ready PDF report generation.</div>
+          </div>
+          <div class="exp-item-card" style="--ei-color: var(--finance);">
+            <div class="exp-item-icon">📑</div>
+            <div class="exp-item-title">Multi-Agentic RAG for EWRA Reports</div>
+            <div class="exp-item-desc">Developed a multi-agentic RAG system to retrieve relevant data from EWRA reports and perform mathematical operations and contextual analysis using GenAI models as tools.</div>
+          </div>
+          <div class="exp-item-card" style="--ei-color: var(--finance);">
+            <div class="exp-item-icon">🕸️</div>
+            <div class="exp-item-title">Automated Web-Scraping Intelligence</div>
+            <div class="exp-item-desc">Designed and developed an automated web-scraping system that aggregates publicly available internet data to identify financial crime and financial activity related to individuals using name-based searches.</div>
+          </div>
+          <div class="exp-item-card" style="--ei-color: var(--finance);">
+            <div class="exp-item-icon">📋</div>
+            <div class="exp-item-title">Case Prioritisation &amp; Workflows</div>
+            <div class="exp-item-desc">Case prioritisation and allocation workflows across Singapore, UK, and Turkey markets — coordinating multi-team dependencies and suspicious transaction triggers in real time.</div>
+          </div>
+        </div>
+        <div class="exp-metrics-row">
+          <div class="exp-metric-pill" style="--em-color: var(--finance);"><span>3</span> Markets</div>
+          <div class="exp-metric-pill" style="--em-color: var(--finance);"><span>GenAI</span> Multi-Agent</div>
+          <div class="exp-metric-pill" style="--em-color: var(--finance);"><span>EWRA</span> Analytics</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EY -->
+    <div class="exp-block reveal d2" id="exp-block-ey">
+      <div class="exp-block-header" style="--eb-color: var(--tech);">
+        <div class="exp-block-top">
+          <div class="exp-block-icon">📊</div>
+          <div>
+            <div class="exp-block-company" style="color: var(--tech);">Ernst &amp; Young · Data Science &amp; ML</div>
+            <div class="exp-block-role">Consultant → Associate Consultant</div>
+            <div class="exp-block-period">Aug 2024 — Feb 2026 · Bangalore, India</div>
+          </div>
+        </div>
+      </div>
+      <div class="exp-block-content">
+        <div class="exp-item-grid">
+          <div class="exp-item-card" style="--ei-color: var(--tech);">
+            <div class="exp-item-icon">🤖</div>
+            <div class="exp-item-title">LLM Feature Pipeline</div>
+            <div class="exp-item-desc">Code parsing, embedding-based graph generation, PDF/Excel output and RAG SQL/vector DB integration — 60% automation gain.</div>
+            <div class="exp-item-metric" style="color: var(--tech);">60% Automation ↑</div>
+          </div>
+          <div class="exp-item-card" style="--ei-color: var(--tech);">
+            <div class="exp-item-icon">🛡️</div>
+            <div class="exp-item-title">LLM Vulnerability Scanner</div>
+            <div class="exp-item-desc">Transformer-based NLP system with conversational interface for real-time threat detection. 40% better than baseline methods.</div>
+            <div class="exp-item-metric" style="color: var(--tech);">40% Better Detection</div>
+          </div>
+          <div class="exp-item-card" style="--ei-color: var(--tech);">
+            <div class="exp-item-icon">⚖️</div>
+            <div class="exp-item-title">Responsible AI Models</div>
+            <div class="exp-item-desc">Toxicity, bias, and unsafe language classification models with 45% accuracy improvement over baseline safety benchmarks.</div>
+            <div class="exp-item-metric" style="color: var(--tech);">45% Accuracy ↑</div>
+          </div>
+          <div class="exp-item-card" style="--ei-color: var(--tech);">
+            <div class="exp-item-icon">💉</div>
+            <div class="exp-item-title">SQL Injection Automation</div>
+            <div class="exp-item-desc">Combined web crawling, ML &amp; GenAI payload generation to automate SQL injection testing. Slashed manual effort 60%, scan time 50%.</div>
+            <div class="exp-item-metric" style="color: var(--tech);">60% Effort ↓ · 50% Faster</div>
+          </div>
+          <div class="exp-item-card" style="--ei-color: var(--tech);">
+            <div class="exp-item-icon">📉</div>
+            <div class="exp-item-title">CyberRisk Quantification</div>
+            <div class="exp-item-desc">Probabilistic risk models using Monte Carlo simulations and SQL threat intelligence for risk-adjusted financial mitigations. 45% efficiency increase.</div>
+            <div class="exp-item-metric" style="color: var(--tech);">45% Efficiency ↑</div>
+          </div>
+        </div>
+        <div class="exp-metrics-row">
+          <div class="exp-metric-pill" style="--em-color: var(--tech);"><span>60%</span> Automation</div>
+          <div class="exp-metric-pill" style="--em-color: var(--tech);"><span>40%</span> Better Detection</div>
+          <div class="exp-metric-pill" style="--em-color: var(--tech);"><span>1.5 yrs</span> Duration</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hitachi -->
+    <div class="exp-block reveal d3" id="exp-block-hitachi">
+      <div class="exp-block-header" style="--eb-color: var(--product);">
+        <div class="exp-block-top">
+          <div class="exp-block-icon">⚡</div>
+          <div>
+            <div class="exp-block-company" style="color: var(--product);">Hitachi · Research Intern</div>
+            <div class="exp-block-role">Data Science &amp; Machine Learning</div>
+            <div class="exp-block-period">Aug 2023 — Nov 2023 · Bangalore, India</div>
+          </div>
+        </div>
+      </div>
+      <div class="exp-block-content">
+        <div class="exp-item-grid">
+          <div class="exp-item-card" style="--ei-color: var(--product);">
+            <div class="exp-item-icon">🔍</div>
+            <div class="exp-item-title">Leakage Detection ML Models</div>
+            <div class="exp-item-desc">SVM, XGBoost, and Linear Regression models integrating pressure/flow/temperature sensors with system topology. Achieved 97.5% detection accuracy.</div>
+            <div class="exp-item-metric" style="color: var(--product);">97.5% Accuracy</div>
+          </div>
+          <div class="exp-item-card" style="--ei-color: var(--product);">
+            <div class="exp-item-icon">⚡</div>
+            <div class="exp-item-title">Performance Improvements</div>
+            <div class="exp-item-desc">Improved response time by 35% and lowered false positives by 60% through model optimisation and feature engineering.</div>
+            <div class="exp-item-metric" style="color: var(--product);">35% Faster · 60% Fewer FP</div>
+          </div>
+        </div>
+        <div class="exp-metrics-row">
+          <div class="exp-metric-pill" style="--em-color: var(--product);"><span>97.5%</span> Accuracy</div>
+          <div class="exp-metric-pill" style="--em-color: var(--product);"><span>35%</span> Faster</div>
+          <div class="exp-metric-pill" style="--em-color: var(--product);"><span>ML</span> Research</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 Swastik Ghosh &nbsp;·&nbsp;
+    <span class="footer-link" onclick="showPage('home')">Back to Home</span>
+  </footer>
+</div>
+
+
+<!-- ═══════════════════════ CHATBOT (RESUME LLM) ════════════════════════ -->
+<!-- Floating Action Button -->
+<button type="button" class="chat-fab" id="chat-fab" onclick="toggleChat()" aria-label="Open Resume Assistant">
+  <span class="chat-fab-icon">🤖</span>
+  <span class="chat-fab-text">Ask AI</span>
+</button>
+
+<!-- Chat Panel -->
+<div class="chat-panel" id="chat-panel">
+  <div class="chat-header">
+    <div class="chat-header-info">
+      <h4 class="chat-header-title">Resume LLM</h4>
+      <p class="chat-header-status">
+        <span class="chat-status-dot"></span> Online (Gemini + RAG)
+      </p>
+    </div>
+    <button type="button" class="chat-close-btn" onclick="toggleChat()" aria-label="Close Chat">&times;</button>
+  </div>
+  
+  <div class="chat-messages" id="chat-messages">
+    <div class="chat-msg bot">
+      <div class="chat-bubble">
+        Hello! I am Swastik's Resume AI Assistant. I can answer questions about his experience, skills, publications, and projects based on his resume. What would you like to know?
+      </div>
+    </div>
+  </div>
+
+  <div class="chat-suggestions" id="chat-suggestions">
+    <button type="button" class="chat-suggest-btn" onclick="sendSuggestedQuestion(event, 'What is Swastik\'s current role?')">Current Role?</button>
+    <button type="button" class="chat-suggest-btn" onclick="sendSuggestedQuestion(event, 'Tell me about his EY experience')">EY Experience</button>
+    <button type="button" class="chat-suggest-btn" onclick="sendSuggestedQuestion(event, 'What are his core technical skills?')">Technical Skills</button>
+    <button type="button" class="chat-suggest-btn" onclick="sendSuggestedQuestion(event, 'What research papers has he published?')">Publications</button>
+  </div>
+
+  <form class="chat-input-area" id="chat-form" onsubmit="handleChatSubmit(event); return false;">
+    <input type="text" class="chat-input" id="chat-input" placeholder="Ask a question..." required autocomplete="off" />
+    <button type="button" class="chat-mic-btn" id="chat-mic-btn" onclick="toggleVoiceInput()" aria-label="Voice Input">
+      <span class="chat-mic-icon">🎤</span>
+    </button>
+    <button type="submit" class="chat-submit-btn" id="chat-submit" aria-label="Send Message">
+      <span class="chat-submit-icon">➔</span>
+    </button>
+  </form>
+</div>
+
+<!-- ═══════════════════════ SCRIPTS ════════════════════════ -->
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/counters.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/flashcard.js"></script>
+
+</body>
+</html>
